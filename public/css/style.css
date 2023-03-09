@@ -1,0 +1,51 @@
+:root {
+  --background: black;
+  /* purple accent-4 */
+  --nav: #aa00ff;
+  /* deep-purple accent-1 */
+  --light: #b388ff;
+  /* deep-purple lighten-1 */
+  --medium: #7e57c2;
+  /* deep-purple */
+  --dark: #673ab7;
+  /* deep-purple darken-4 */
+  --darkest: #311b92; 
+  --font: white;
+}
+
+body {
+  background-color: black;
+}
+
+.mania-home {
+  margin-top: 8%;
+}
+
+.btn-large {
+  border-radius: 50px;
+  font-weight: bolder;
+  font-size: x-large;
+  display: inline-block;
+  margin: 1%;
+}
+nav {
+  height: 80px;
+/* line-height: 0px; */
+}
+
+.brand-logo {
+max-height: 60px;
+margin-left: 1rem;
+margin-top: .5rem;
+}
+
+.nav-font-size {
+  font-weight: bolder;
+}
+
+.login-page-header {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 4rem;
+  margin-top: 8rem;
+}
+

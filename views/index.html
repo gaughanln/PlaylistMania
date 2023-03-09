@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- MATERIALIZE LINK -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!-- CSS LINK -->
+    <link rel="stylesheet" href="../../public/css/style.css" />
+
+    <title>Playlist Mania</title>
+  </head>
+  <body>
+    <!-- header -->
+  <nav>
+    <div class="nav-wrapper purple accent-4">
+      <img class ="responsive-img brand-logo" src="../assets/maniaLogo.png" alt="Logo">
+
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <!-- {{!-- update routes --}} -->
+        <!-- cant figure out the damn font size -->
+<div class="nav-font-size">
+      
+         <li><a class="white-text">my playlists</a></li>
+          <li><a class="white-text">logout</a></li>
+        </div>
+      </ul>
+    </div>
+  </nav>
+
+<!-- home page -->
+<!-- <div class="center-align">
+      <img
+        class="responsive-img mania-home"
+        src="../../assets/homepage.png"
+        alt="playlist mania landing page"
+      />
+    </div>
+
+    <div class="center-align">
+      <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">log in </button>
+
+      <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">sign up </button>
+    </div> -->
+
+<!-- login page -->
+<!-- <div class="center-align">
+  <h1 class="login-page-header white-text"> welcome back </h1>
+ 
+  <div class="login-form">
+  <div class="row">
+    <div class="input-field col s4 offset-s4 ">
+      <input id="email" type="email" class="validate">
+      <label for="email">email</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s4 offset-s4">
+      <input id="password" type="password" class="validate">
+      <label for="password">password</label>
+    </div>
+  </div>
+</div>
+<button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action"> login </button>
+</div> -->
+
+<!-- sign in page -->
+<!-- <div class="center-align">
+  <h1 class="login-page-header white-text"> sign up </h1>
+ 
+  <div class="login-form">
+  <div class="row">
+    <div class="input-field col s4 offset-s4 ">
+      <input id="email" type="email" class="validate">
+      <label for="email">email</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s4 offset-s4">
+      <input id="password" type="password" class="validate">
+      <label for="password">password</label>
+    </div>
+  </div>
+</div>
+<button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">sign up </button>
+</div> -->
+
+<!-- pick your genre page -->
+
+<div class="row">
+  
+  <div class="col s12 white-text">
+    <h1> let's get started </h1>
+    <h2>what kind of music are you in the mood for today?</h2>
+
+<div class="row"></div>
+  </div>
+  <div class="col s6">
+    <img src="../assets/playlist.png" alt="playlist graphic">
+  </div>
+</div>
+
+<div class="center-align">
+<div class="row">
+  <div class="col6">
+  <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">sign up </button>
+
+  <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">sign up </button>
+
+  <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">sign up </button>
+</div>
+</div>
+</div>
+
+    {{#if loggedIn}}
+  </body>
+</html>
