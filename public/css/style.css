@@ -28,6 +28,11 @@ body {
   display: inline-block;
   margin: 1%;
 }
+
+.btn-large:hover {
+background-color: var(--light) !important;
+}
+
 nav {
   height: 80px;
 /* line-height: 0px; */
@@ -39,8 +44,9 @@ margin-left: 1rem;
 margin-top: .5rem;
 }
 
-.nav-font-size {
+.nav-font-size a{
   font-weight: bolder;
+  font-size: xx-large;
 }
 
 .login-page-header {
@@ -48,4 +54,14 @@ margin-top: .5rem;
   font-size: 4rem;
   margin-top: 8rem;
 }
+.genres h1 {
+  font-family: impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
+}
+.genre-contents {
+  margin-top: 10%;
+}
+
+.playlist-img {
+  max-height: 3rem;
+}
