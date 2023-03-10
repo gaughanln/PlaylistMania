@@ -23,7 +23,7 @@ app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(routes); //gives me an error because of no code inside of controllers folder
+//app.use(routes); //gives me an error because of no code inside of controllers folder
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
