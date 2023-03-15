@@ -16,3 +16,13 @@ CREATE TABLE playlists (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
+
+CREATE TABLE songs (
+    song_id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(250) NOT NULL,
+    artist VARCHAR(250) NOT NULL,
+    album VARCHAR(250),
+    duration INT NOT NULL,
+    genre VARCHAR(250),
+    UNIQUE (title, artist)
+);
