@@ -2,11 +2,13 @@ const express = require('express');
 const session = require('express-session');
 const routes = require('./controllers');
 
+
 const exphbs = require('express-handlebars');
 
 
 
 const sequelize = require('./config/connections');
+
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const helper = require('./utils/helper')
 
@@ -37,8 +39,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // SERVER WILL ONLY RUN AT THE MOMENT WITH THESE THINGS COMMENTED OUT
 
-
 // app.use(routes);
+
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
