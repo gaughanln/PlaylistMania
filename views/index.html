@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- RESET CSS -->
+    <link rel="stylesheet" href="/css/reset.css" />
+    
     <!-- MATERIALIZE LINK -->
     <link
       rel="stylesheet"
@@ -18,25 +21,27 @@
   </head>
   <body>
     <!-- header -->
-   <nav>
-    <div class="nav-wrapper purple accent-4">
-      <img class ="responsive-img brand-logo" src="../assets/mania.png" alt="Logo">
+    <nav>
+      <div class="nav-wrapper purple accent-4">
+        <img
+          class="responsive-img brand-logo"
+          src="../assets/mania.png"
+          alt="Logo"
+        />
 
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <!-- {{!-- update routes --}} -->
-        <!-- can't figure out the damn font size -->
-<div class="nav-font-size">
-      
-         <li><a class="white-text">my playlists</a></li>
-          <li><a class="white-text">logout</a></li>
-        </div>
-      </ul>
-    </div>
-  </nav> 
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <!-- {{!-- update routes --}} -->
+          <!-- can't figure out the damn font size -->
+          <div class="nav-font-size">
+            <li><a class="white-text">my playlists</a></li>
+            <li><a class="white-text">logout</a></li>
+          </div>
+        </ul>
+      </div>
+    </nav>
 
-
-<!-- landing page -->
-<!-- <div class="center-align">
+    <!-- landing page -->
+    <!-- <div class="center-align">
       <img
         class="responsive-img mania-home"
         src="../../assets/homepage.png"
@@ -50,9 +55,8 @@
       <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">sign up </button>
     </div> -->
 
-    
-<!-- login page -->
-<!-- <div class="center-align">
+    <!-- login page -->
+    <!-- <div class="center-align">
   <h1 class="login-page-header white-text"> welcome back </h1>
  
   <div class="login-form">
@@ -72,9 +76,8 @@
 <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action"> login </button>
 </div> -->
 
-
-<!-- sign up page -->
-<!-- <div class="center-align">
+    <!-- sign up page -->
+    <!-- <div class="center-align">
   <h1 class="login-page-header white-text"> sign up </h1>
  
   <div class="login-form">
@@ -94,76 +97,75 @@
 <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">sign up </button>
 </div> -->
 
-
-<!-- pick your genre page -->
-<div class="center-align">
-<div class="row">
-  
+    <!-- pick your genre page -->
+    <!-- <div class="center-align">
   <div class="col s12 white-text genres">
     <h1> let's get started </h1>
     <h2>what kind of music are you in the mood for today?</h2>
   </div>
-</div>
-
-<div class="row genre-contents">
-  <div class="col l5 s12 offset-l1 offset-s1 ">
+</div> -->
 
     <!-- genre buttons -->
-      <div class="row">
-  <div class="col l4">
-  <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action"> rock </button></div>
+    <!-- <div class="container">
 
-  <div class="col l4">
-  <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">country </button></div>
+   <div class = "grid">
+    <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action"> country </button>
 
-  <div class="col l4">
-  <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">electronic </button></div>
-</div>
+    <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">rock </button>
+ 
+    <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">alternative rock </button>
 
-<div class="row">
-  <div class="col l4">
-  <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">funk </button></div>
+    <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">rap </button>
+ 
+    <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">hip hop </button>
 
-  <div class="col l4">
-  <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">hip hop </button></div>
+    <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">metal </button>
 
-  <div class="col l4">
-  <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">latin </button></div>
-</div>
+    <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">j-pop </button>
 
-<div class="row">
-  <div class="col l4">
-  <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">pop </button></div>
+    <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">pop </button>
+ 
+    <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">electro house </button>
 
-  <div class="col l4">
-  <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">soundtrack </button></div>
+    <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">edm </button>
 
-  <div class="col l4">
-  <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">r&b </button></div>
-</div>
-</div>
+    <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">lo-fi </button>
 
-    <!-- playlist image -->
-      <div class="col s12 l4 offset-l1 playlist-img">
+    <button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">classical </button>
+  </div> 
+
+ playlist image -->
+    <!-- <div class="playlist-img">
     <img src="../assets/playlist.png" alt="playlist graphic">
   </div>
+
+</div>   -->
+
+    <!-- playlist page -->
+    <!-- <div class="col s12 white-text genres center-align">
+      <h1> party on wayne 🤘🏽 </h1>
+      </div>
   </div>
-  </div>
-
-
-<!-- playlist page -->
-
-      
-
-
-
-
-
-
-
-
     
+    <div class="center-align playlist">
+      <div class="row">
+        <div class="col s12 l6 offset-l1 offset-s1">
+          <iframe
+            style="border-radius: 12px"
+            src="https://open.spotify.com/embed/playlist/37i9dQZF1DX1kCIzMYtzum?utm_source=generator&theme=0"
+            width="60%"
+            height="500"
+            frameborder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          ></iframe>
+        </div>
 
-
-    </body>
+        <div class="col s12 l3 dj-img responsive-img">
+          <img src="../assets/dj.gif" alt="dj graphic" />
+        </div>
+      </div>
+    </div> -->
+  </body>
 </html>

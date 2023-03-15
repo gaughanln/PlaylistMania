@@ -63,5 +63,27 @@ margin-top: .5rem;
 }
 
 .playlist-img {
-  max-height: 3rem;
+  /* max-height: 3rem; */
+display: inline-block;
 }
+
+.playlist {
+  max-height: 3rem;
+  margin-top: 6rem;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+
