@@ -1,4 +1,4 @@
-const router = require('express').Router();
+// const router = require('express').Router();
 const playlistRoutes = require('./category-routes');
 const playlistSongRoutes = require('./product-routes');
 const songRoutes = require('./tag-routes');
@@ -10,7 +10,7 @@ router.use('/songs', songRoutes);
 router.use('/users', userRoutes);
 
 module.exports = router;
-const router = require('express').Router();
+// const router = require('express').Router();
 const userRoutes = require('./userRoutes');
 
 router.use('/users', userRoutes);

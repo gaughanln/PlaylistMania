@@ -4,10 +4,10 @@ const { Playlist, PlaylistSong } = require('../../models');
 router.post('/', async (req, res) => {
     // create a new tag
     try {
-      const tagData = await Playlist.create({
-        tag_name: req.body.tag_name
+      const playlistData = await Playlist.create({
+        playlist_name: req.body.tag_name
       })
-      res.status(200).json(tagData);
+      res.status(200).json(playlistData);
     }
     catch(err) {
       res.status(500).json(err) 
@@ -15,12 +15,11 @@ router.post('/', async (req, res) => {
   });
 
 router.get('/', async (req, res) => {
-  
     try { 
-      const productData = await Playlist.findAll({
+      const playlistData = await Playlist.findAll({
         include:[{model: Category }, {model: Tag }]
       });
-      res.status(200).json(productData);
+      res.status(200).json(playlistData);
     } catch(err) {
       res.status(500).json(err);
     }
@@ -28,10 +27,10 @@ router.get('/', async (req, res) => {
 
     router.get('/:id', async (req, res) => {
       try {
-        const tagData = await PlaylistSong.findByPk(req.params.id,{
-          include: Product
+        const playlistData = await PlaylistSong.findByPk(req.params.id,{
+          include: PlaylistSong
         });
-        res.status(200).json(tagData);
+        res.status(200).json(playlistData);
       } catch(err) {
         res.status(500).json(err) 
       }
