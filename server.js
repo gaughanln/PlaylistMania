@@ -39,9 +39,14 @@ app.use(express.urlencoded({ extended: true }));
 
 // SERVER WILL ONLY RUN AT THE MOMENT WITH THESE THINGS COMMENTED OUT
 
-// app.use(routes);
+app.use(routes);
 
+
+// const listEndpoints = require('express-list-endpoints');
+// console.log(listEndpoints(app));
+//delte later ^^^
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
+  //console.log(PORT); //idk why the ports are different from the config connections stuff
 });
