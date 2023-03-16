@@ -4,10 +4,9 @@ const apiroutes = require('./api');
 router.use('/api', apiroutes);
 
 
-router.get('/', async (req, res) => {
+router.get('/login', async (req, res) => {
 
-    const logoOnlyHeader = '<p>TEST TEST TEST</p>';
-    res.render('login', {logoOnlyHeader});
+    res.render('login');
 });
 
 module.exports = router;
