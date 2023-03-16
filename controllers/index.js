@@ -5,8 +5,8 @@ router.use('/api', apiroutes);
 
 
 router.get('/login', async (req, res) => {
-
-    res.render('login');
+    //res.send("test");
+    res.render('partials/home-header.handlebars');
 });
 
 module.exports = router;
