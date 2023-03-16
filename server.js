@@ -48,5 +48,5 @@ app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
-  console.log(PORT); //idk why the ports are different from the config connections stuff
+  //console.log(PORT); //idk why the ports are different from the config connections stuff
 });
