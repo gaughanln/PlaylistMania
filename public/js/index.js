@@ -24,6 +24,8 @@ const displayData = (data) => {
 
   slicedResults.forEach((result) => {
     const resultEl = document.createElement("div");
+    // do we want image? Need to update with materialize
+    // route the results to the next page (playlist)
     resultEl.innerHTML = `
       <div>
         <img src="${result.artworkUrl100}" alt="${result.trackName} album cover">
@@ -51,10 +53,3 @@ document.querySelector('.genre-buttons').addEventListener('click', async (event)
 
 
 
-// document.querySelector('.genre-buttons').addEventListener('click', async (event) => {
-//   if (event.target.classList.contains('genre-button')) {
-//     const genre = event.target.dataset.genre;
-//     const data = await fetchData(genre);
-//     console.log(data);
-//   }
-// });
