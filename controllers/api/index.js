@@ -9,8 +9,10 @@ router.use('/playlistSongs', playlistSongRoutes);
 router.use('/songs', songRoutes);
 router.use('/users', userRoutes);
 
-module.exports = router;
 // const router = require('express').Router();
 const userRoutes = require('./userRoutes');
 
 router.use('/users', userRoutes);
+
+module.exports = router;
+

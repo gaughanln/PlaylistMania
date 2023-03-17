@@ -15,15 +15,13 @@ router.post('/', async (req, res) => {
   });
 
 router.get('/', async (req, res) => {
-    try { 
-      const playlistData = await Playlist.findAll({
-        include:[{model: Category }, {model: Tag }]
-      });
+    try {
+      const playlistData = await Playlist.findAll();
       res.status(200).json(playlistData);
     } catch(err) {
-      res.status(500).json(err);
+      res.status(500).json(err)
     }
-    });
+  });
 
     router.get('/:id', async (req, res) => {
       try {
@@ -35,3 +33,5 @@ router.get('/', async (req, res) => {
         res.status(500).json(err) 
       }
       });
+
+module.exports = router;
