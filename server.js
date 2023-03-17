@@ -36,25 +36,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use("/images", express.static(path.join(__dirname, "/public/images")));
 
-app.get('/', (req, res) => {
-  res.render('homepage');
-});
 
-app.get('/signup', (req, res) => {
-  res.render('signup');
-});
-
-app.get('/genres', (req, res) => {
-  res.render('genres');
-});
-
-app.get('/login', (req, res) => {
-  res.render('login');
-});
-
-app.get('/playlists', (req, res) => {
-  res.render('playlists');
-});
 
 
 // SERVER WILL ONLY RUN AT THE MOMENT WITH THESE THINGS COMMENTED OUT
