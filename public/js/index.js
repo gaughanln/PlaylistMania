@@ -5,8 +5,10 @@ const entity = 'song';
 
 // https://itunes.apple.com/search?term=[genre]&entity=song
 
-const fetchData = async (genre) => {
-  const searchUrl = `${apiUrl}term=${genre}&media=${media}&entity=${entity}&attribute=genreTerm`;
+const fetchData = async (artist) => {
+  const searchUrl = `${apiUrl}term=${artist}&media=${media}&entity=${entity}&attribute=genreIndex`;
+  console.log(searchUrl)
+
   const response = await fetch(searchUrl);
 
   const data = await response.json();
@@ -24,6 +26,8 @@ const displayData = (data) => {
 
   slicedResults.forEach((result) => {
     const resultEl = document.createElement("div");
+    // do we want image? Need to update with materialize
+    // route the results to the next page (playlist)
     resultEl.innerHTML = `
       <div>
         <img src="${result.artworkUrl100}" alt="${result.trackName} album cover">
@@ -41,20 +45,13 @@ const displayData = (data) => {
 };
 
 
-document.querySelector('.genre-buttons').addEventListener('click', async (event) => {
-  if (event.target.classList.contains('genre-button')) {
-    const genre = event.target.dataset.genre;
-    const data = await fetchData(genre);
-    displayData(data);
-  }
+document.querySelector('.artist-btn').addEventListener('click', async (event) => {
+  console.log('thisworks!?')
+var search = document.querySelector('.search-input')
+const data = await fetchData(search.value);
+  console.log(data)
+  displayData(data);
 });
 
 
 
-// document.querySelector('.genre-buttons').addEventListener('click', async (event) => {
-//   if (event.target.classList.contains('genre-button')) {
-//     const genre = event.target.dataset.genre;
-//     const data = await fetchData(genre);
-//     console.log(data);
-//   }
-// });
