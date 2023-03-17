@@ -36,12 +36,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use("/images", express.static(path.join(__dirname, "/public/images")));
 
-
+app.use(routes);
 
 
 // SERVER WILL ONLY RUN AT THE MOMENT WITH THESE THINGS COMMENTED OUT
 
-app.use(routes);
+
 
 
 // const listEndpoints = require('express-list-endpoints');
