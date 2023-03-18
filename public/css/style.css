@@ -90,3 +90,6 @@ display: inline-block;
   font-weight: bolder;
   font-size: x-large; 
 }
+.card {
+  border-radius: 50px;
+}
