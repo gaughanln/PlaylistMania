@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { Playlist, PlaylistSong } = require('../../models');
 
 router.post('/', async (req, res) => {
-    // create a new tag
     try {
       const playlistData = await Playlist.create({
         playlist_name: req.body.tag_name
