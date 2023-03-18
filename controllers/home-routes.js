@@ -10,8 +10,20 @@ router.get('/', (req, res) => {
   res.render('homepage');
 });
 
-router.get('/genres', (req, res) => {
-  res.render('genres');
+router.get('/signup', (req, res) => {
+  res.render('signup');
+});
+
+router.get('/login', (req, res) => {
+  res.render('login');
+});
+
+router.get('/artist', (req, res) => {
+  res.render('artist');
+});
+
+router.get('tracks', (req, res) => {
+  res.render('tracks');
 });
 
 router.get('/playlists', (req, res) => {
