@@ -30,14 +30,25 @@ const displayData = (data) => {
     // route the results to the next page (playlist)
     resultEl.innerHTML = `
       <div>
+      <div class="row">
+    <div class="col s12 m8">
+      <div class="card">
+        <div class="card-image">
         <img src="${result.artworkUrl100}" alt="${result.trackName} album cover">
-        <p>Song title: ${result.trackName}</p>
+        <span class="card-title">${result.trackName}</span>
+        <a class="btn-floating halfway-fab waves-effect waves-light purple accent-4"><i class="material-icons">add</i></a>
+        </div>
+        <div class="card-content">
         <p>Artist: ${result.artistName}</p>
         <p>From the album ${result.collectionName}</p>
     
         <audio controls>
           <source src="${result.previewUrl}" type="audio/mpeg">
         </audio>
+        </div>
+      </div>
+    </div>
+  </div>
       </div>
     `;
     resultsContainer.appendChild(resultEl);
