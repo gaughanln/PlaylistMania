@@ -1,37 +1,50 @@
  {{!-- {{#if loggedIn}} --}}
  {{> full-header}}
-    <!-- pick your genre page -->
-   <div class="center-align">
+       <!-- pick your artist page -->
+    <div class="center-align">
   <div class="col s12 white-text genres">
-    <h1> let's get started </h1>
-    <h2>what kind of music are you in the mood for today?</h2>
+    <h1> party on wayne 🤘🏽 </h1>
+    <!-- <h2>what kind of music are you in the mood for today?</h2> -->
   </div>
 </div>
 
-   	 <!-- genre buttons -->
-      <div class="container">
 
-       <div class="title-two">
-  <h2 class="search-title">Find Your Bike Now</h2>
+
+   	 <!-- gif -->
+      <div class="container">
+        <div class="playlist-img">
+          <img src="./dj.gif" alt="playlist graphic">
+        </div>
+
+<!-- search bar -->
+.. <div class="title-two">
+  <h2 class="white-text search-title">search by artist</h2>
   <div class="search-main">
     <input
-      class="search-input"
-      id="white-text search-bar"
+      class="search-input white-text"
+      id="search-bar"
       type="text"
       placeholder="Search artist"/>
-      <a class=" white-text search-btn waves-effect waves-light btn artist-btn">
-        <i class="material-icons left"> audiotrack </i>Search</a>
+      <div class ="center-align">
+      <a class=" white-text purple accent-4 waves-effect btn-large submit artist-btn">
+        <i class=" material-icons left">audiotrack
+        </i>Search</a>
+      </div>
+       
       </div>
     </div>
-    
+     
        <div id="results"></div>
        <!-- update path -->
-       <script src="../public/js/index.js"></script> 
-
- <!-- playlist image -->
-  <div class="playlist-img">
-    <img src="images/playlist.png" alt="playlist graphic">
-  </div>
+       <script src="../js/index.js"></script> 
+    
 
 </div> 
 
+
+<div id="results"></div>
+<!-- update path -->
+<script src="../js/index.js"></script> 
+
+
+   </div>

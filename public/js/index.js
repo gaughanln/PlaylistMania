@@ -1,19 +1,19 @@
-const apiUrl = 'https://itunes.apple.com/search?';
-let term = ''; //[genre]
-const media = 'music';
-const entity = 'song';
+const apiUrl = "https://itunes.apple.com/search?";
+let term = ""; //[genre]
+const media = "music";
+const entity = "song";
 
 // https://itunes.apple.com/search?term=[genre]&entity=song
 
 const fetchData = async (artist) => {
   const searchUrl = `${apiUrl}term=${artist}&media=${media}&entity=${entity}&attribute=genreIndex`;
-  console.log(searchUrl)
+  console.log(searchUrl);
 
   const response = await fetch(searchUrl);
 
   const data = await response.json();
   return data;
-}
+};
 const displayData = (data) => {
   const resultsContainer = document.getElementById("results");
   resultsContainer.innerHTML = "";
@@ -31,7 +31,7 @@ const displayData = (data) => {
     resultEl.innerHTML = `
       <div>
       <div class="row">
-    <div class="col s12 m8">
+    <div class="col s12 m">
       <div class="card">
         <div class="card-image">
         <img src="${result.artworkUrl100}" alt="${result.trackName} album cover">
@@ -55,14 +55,12 @@ const displayData = (data) => {
   });
 };
 
-
-document.querySelector('.artist-btn').addEventListener('click', async (event) => {
-  console.log('thisworks!?')
-var search = document.querySelector('.search-input')
-const data = await fetchData(search.value);
-  console.log(data)
-  displayData(data);
-});
-
-
-
+document
+  .querySelector(".artist-btn")
+  .addEventListener("click", async (event) => {
+    console.log("thisworks!?");
+    var search = document.querySelector(".search-input");
+    const data = await fetchData(search.value);
+    console.log(data);
+    displayData(data);
+  });
