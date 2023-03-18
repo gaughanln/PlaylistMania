@@ -1,19 +1,23 @@
- {{> home-header}}
+{{> home-header}}
 <div class="center-align">
   <h1 class="login-page-header white-text"> sign up </h1>
 
-  <div class="login-form">
-  <div class="row">
-    <div class="input-field col s4 offset-s4 ">
-      <input id="email" type="email" class="validate white-text" placeholder="email">
+  <form class="form signup-form">
+    <div class="signup-form">
+      <div class="row">
+        <div class="input-field col s4 offset-s4 ">
+          <input id="email" type="email" class="validate white-text" placeholder="email">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s4 offset-s4">
+          <input id="password" type="password" class="validate white-text" placeholder="password">
+
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="input-field col s4 offset-s4">
-      <input id="password " type="password" class="validate white-text" placeholder="password">
-      
-    </div>
-  </div>
+    <button class="white-text purple accent-4 waves-effect btn-large" type="submit" name="signup">sign up </button>
 </div>
-<button class="white-text purple accent-4 waves-effect btn-large" type ="submit" name="action">sign up </button>
-</div>
+</form>
+
+<script src="./js/signup.js"></script>
