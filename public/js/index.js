@@ -29,19 +29,19 @@ const displayData = (data) => {
     // do we want image? Need to update with materialize
     // route the results to the next page (playlist)
     resultEl.innerHTML = `
-      <div>
+     
       <div class="row">
-    <div class="col s12 m">
-      <div class="card">
-        <div class="card-image">
-        <img src="${result.artworkUrl100}" alt="${result.trackName} album cover">
-        <span class="card-title">${result.trackName}</span>
-        <a class="btn-floating halfway-fab waves-effect waves-light purple accent-4"><i class="material-icons">add</i></a>
-        </div>
+      <div class="col s12 m8">
+        <div class="card purple accent-4 waves-effect">
+          <div class="center-align card-content white-text">
+            <span class="card-title">${result.trackName}</span>
+
+       
+       
         <div class="card-content">
         <p>Artist: ${result.artistName}</p>
         <p>From the album ${result.collectionName}</p>
-    
+        <a class="btn-floating halfway-fab waves-effect waves-light deep-purple lighten-4"><i class="material-icons">add</i></a>
         <audio controls>
           <source src="${result.previewUrl}" type="audio/mpeg">
         </audio>

@@ -86,4 +86,7 @@ display: inline-block;
   flex-wrap: wrap;
 }
 
-
+.card-title {
+  font-weight: bolder;
+  font-size: x-large; 
+}
