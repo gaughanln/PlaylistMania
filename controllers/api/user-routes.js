@@ -18,17 +18,17 @@ router.get('/', async (req, res) => {
 
 router.post('/login', async (req, res) => {
     try {
-        const { username, password } = req.body;
-        const user = await User.findOne({ where: { username } });
+        const { email, password } = req.body;
+        const user = await User.findOne({ where: { email } });
 
         if (!user) {
-            return res.status(400).json({ message: 'Invalid username or password' });
+            return res.status(400).json({ message: 'Invalid email or password' });
         }
 
         const isValidPassword = user.checkPassword(password);
 
         if (!isValidPassword) {
-            return res.status(400).json({ message: 'Invalid username or password' });
+            return res.status(400).json({ message: 'Invalid email or password' });
         }
         return res.json({ message: 'Login successful' });
 
@@ -40,10 +40,10 @@ router.post('/login', async (req, res) => {
 
 router.post('/signup', async (req, res) => {
     try {
-        const { username, password } = req.body;
+        const { email, password } = req.body;
 
         const newUser = await User.create({
-            username,
+            email,
             password,
           });
 
@@ -55,23 +55,23 @@ router.post('/signup', async (req, res) => {
 });
 
 //probably don't need this but idk
-router.put('/:username', async (req, res) => {
-    try {
-      // Find the user by their username
-      const user = await User.findOne({ where: { username: req.params.username } });
+// router.put('/:username', async (req, res) => {
+//     try {
+//       // Find the user by their username
+//       const user = await User.findOne({ where: { email: req.params.email } });
       
-      if (!user) {
-        return res.status(404).json({ message: 'No user found with this username' });
-      }
+//       if (!user) {
+//         return res.status(404).json({ message: 'No user found with this username' });
+//       }
   
-      // change the user's password
-      const updatedUser = await user.update(req.body);
+//       // change the user's password
+//       const updatedUser = await user.update(req.body);
   
-      res.status(200).json(updatedUser);
-    } catch (err) {
-      console.error(err);
-      res.status(500).json({message: 'error changing user password'});
-    }
-  });
+//       res.status(200).json(updatedUser);
+//     } catch (err) {
+//       console.error(err);
+//       res.status(500).json({message: 'error changing user password'});
+//     }
+//   });
   
   module.exports = router;
