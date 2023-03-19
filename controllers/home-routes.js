@@ -1,4 +1,6 @@
 const exphbs = require('express-handlebars');
+const { User } = require('../models');
+const withAuth = require('../utils/auth');
 
 const express = require('express');
 const router = express.Router();
@@ -18,16 +20,14 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/artist', (req, res) => {
-  res.render('artist');
+router.get('/artist', withAuth, (req, res) => {
+  res.render('artist', {
+    logged_in: req.session.logged_in,
+  });
 });
 
-router.get('tracks', (req, res) => {
-  res.render('tracks');
-});
-
-router.get('/playlists', (req, res) => {
-  res.render('playlists');
+router.get('/playlist', (req, res) => {
+  res.render('playlist');
 });
 
 module.exports = router;
