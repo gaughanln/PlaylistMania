@@ -33,6 +33,10 @@ body {
 background-color: var(--light) !important;
 }
 
+.favorite:hover {
+  background-color: var(--light) !important;
+}
+
 nav {
   height: 80px;
 /* line-height: 0px; */
@@ -92,4 +96,16 @@ display: inline-block;
 }
 .card {
   border-radius: 50px;
+  padding: 10px;
+  margin: 10px;
+  max-width: 400px;
+  max-height: 300px;
+  min-height: 300px;
+}
+
+#results {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
 }
