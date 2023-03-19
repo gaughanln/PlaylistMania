@@ -22,7 +22,7 @@ const displayData = (data) => {
   const shuffledResults = data.results.sort(() => Math.random() - 0.5);
 
   // Only display 15 results
-  const slicedResults = shuffledResults.slice(0, 15);
+  const slicedResults = shuffledResults.slice(0, 9);
 
   slicedResults.forEach((result) => {
     const resultEl = document.createElement("div");
@@ -30,8 +30,7 @@ const displayData = (data) => {
     // route the results to the next page (playlist)
     resultEl.innerHTML = `
      
-      <div class="row">
-      <div class="col s12 m4 l3">
+   
         <div class="card purple accent-4 waves-effect">
           <div class="center-align card-content white-text">
             <span class="card-title">${result.trackName}</span>
@@ -44,11 +43,9 @@ const displayData = (data) => {
           <source src="${result.previewUrl}" type="audio/mpeg">
         </audio>
         </div>
-        <a class="btn-floating fab waves-effect waves-light purple lighten-1"><i class="material-icons">add</i></a>
+        <a class="btn-floating fab waves-effect waves-light purple lighten-1 favorite"><i class="material-icons">add</i></a>
       </div>
     </div>
-  </div>
-      </div>
     `;
     resultsContainer.appendChild(resultEl);
   });
