@@ -7,71 +7,75 @@ const { User } = require('../../models');
 //     res.send("Test Test");
 // });
 
-router.get('/', async (req, res) => {
-    try {
-      const userData = await User.findAll();
+router.post('/', async (req, res) => {
+  try {
+    const userData = await User.create(req.body);
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
       res.status(200).json(userData);
-    } catch (err) {
-      res.status(500).json(err);
-    }
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.post('/login', async (req, res) => {
-    try {
-        const { email, password } = req.body;
-        const user = await User.findOne({ where: { email } });
+  try {
+    const userData = await User.findOne({
+      where: {
+        email: req.body.email,
+      },
+    });
 
-        if (!user) {
-            return res.status(400).json({ message: 'Invalid email or password' });
-        }
-
-        const isValidPassword = user.checkPassword(password);
-
-        if (!isValidPassword) {
-            return res.status(400).json({ message: 'Invalid email or password' });
-        }
-        return res.json({ message: 'Login successful' });
-
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ message: 'Server Error' });
+    if (!userData) {
+      return res.status(400).json({ message: 'Invalid email or password' });
     }
+
+    const validPassword = await userData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      return res.status(400).json({ message: 'Invalid email or password' });
+    }
+
+    req.session.save(() => {
+      req.session.loggedIn = true;
+      res.status(200).json({ user: userData, message: 'You are now logged in!' });
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 router.post('/signup', async (req, res) => {
-    try {
-        const { email, password } = req.body;
+  try {
+    const userData = await User.create({
+      email: req.body.email,
+      password: req.body.password,
+    });
 
-        const newUser = await User.create({
-            email,
-            password,
-          });
-
-        res.status(200).json({message: 'created user'});
-    } catch (err) {
-      console.log(err);
-      res.status(500).json({message: 'error creating user'});
-    }
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+      res.status(200).json(userData);
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-//probably don't need this but idk
-// router.put('/:username', async (req, res) => {
-//     try {
-//       // Find the user by their username
-//       const user = await User.findOne({ where: { email: req.params.email } });
-      
-//       if (!user) {
-//         return res.status(404).json({ message: 'No user found with this username' });
-//       }
-  
-//       // change the user's password
-//       const updatedUser = await user.update(req.body);
-  
-//       res.status(200).json(updatedUser);
-//     } catch (err) {
-//       console.error(err);
-//       res.status(500).json({message: 'error changing user password'});
-//     }
-//   });
-  
-  module.exports = router;
+router.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
+
+
+module.exports = router;

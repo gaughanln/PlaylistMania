@@ -1,7 +1,7 @@
 const sequelize = require('../config/connections');
 const User = require('../models/user');
-const userData = require('./users.json');
 
+const userData = require('./user.json');
 
 const bcrypt = require('bcrypt'); // i need it to hash it. when i seed it
 
@@ -16,9 +16,12 @@ const seedUsers = async () => {
         })
     );
 
-    await User.bulkCreate(users); //add it all to database
+    await User.bulkCreate(users, {
+        individualHooks: true,
+        returning: true,
+      });
+
+      process.exit(0);
 }
 
 seedUsers();
-
-module.exports = seedUsers;
