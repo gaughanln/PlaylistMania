@@ -19,5 +19,6 @@ const seedUsers = async () => {
     await User.bulkCreate(users); //add it all to database
 }
 
+seedUsers();
 
 module.exports = seedUsers;

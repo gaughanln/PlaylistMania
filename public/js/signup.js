@@ -1,24 +1,24 @@
 const signupFormHandler = async (event) => {
     event.preventDefault();
   
-    const email = document.querySelector('#email').value.trim();
-    const password = document.querySelector('#password').value.trim();
+    const emailEl = document.querySelector("#email");
+    const passwordEl = document.querySelector("#password");
   
-    if (email && password) {
-      const response = await fetch('/api/users', {
+      const response = await fetch('/api/users/signUp', {
         method: 'POST',
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email: emailEl.value.trim(),  password: passwordEl.value.trim() }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/artist');
       } else {
         alert('Failed to sign up.');
       }
-    }
-  };
+    };
 
 document
     .querySelector('.signup-form')
     .addEventListener('submit', signupFormHandler);
+
+
