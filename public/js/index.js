@@ -102,6 +102,7 @@ const displayData = (data) => {
     iElement.className = 'material-icons';
     iElement.textContent = 'add';
 
+
     aElement.appendChild(iElement);
     
 
