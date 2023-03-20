@@ -47,7 +47,7 @@ Here is the [link]() to the deployed Playlist Mania app
 
 🤭 `Joseph Cornelius` - routes, api/local storage
 
-🫠 `Lindsey Gaughan` - Handlebars, CSS, set up file structure + connection, api
+🫠 `Lindsey Gaughan` - Handlebars, CSS, initial file structure + connection, api
 
 
 
