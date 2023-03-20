@@ -41,7 +41,7 @@ Here is the [link]() to the deployed Playlist Mania app
 
 ## 📓 Contributing + Rough breakdown of tasks
 
-🥲 `Clint Martin` - login/logout.js + routes, handlebars routing, code cleanup
+🥲 `Clint Martin` - handlebars routing, refactoring + Heroku deployment
 
 😡 `Jason Shi` - models, routes, api/local storage
 
