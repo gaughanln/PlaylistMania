@@ -3,7 +3,6 @@ let term = ""; //[genre]
 const media = "music";
 const entity = "song";
 
-
 const fetchData = async (artist) => {
   const searchUrl = `${apiUrl}term=${artist}&media=${media}&entity=${entity}&attribute=genreIndex`;
   console.log(searchUrl);
@@ -26,22 +25,70 @@ const displayData = (data) => {
   slicedResults.forEach((result) => {
     const resultEl = document.createElement("div");
 
-    resultEl.innerHTML = `
-    <div class="card purple accent-4 waves-effect">
-      <div class="center-align card-content white-text">
-        <span class="card-title">${result.trackName}</span>
-          <div class="card-content">
-            <p>Artist: ${result.artistName}</p>
-            <p>From the album ${result.collectionName}</p>
-              <audio controls>
-                <source src="${result.previewUrl}" type="audio/mpeg">
-              </audio>
-          </div>
-            <a class="btn-floating fab waves-effect waves-light purple lighten-1 fav-btn"><i class="material-icons">add</i></a>
-      </div>
-    </div>
-    `;
+    const cardEl = document.createElement("div");
+    cardEl.classList.add("card", "purple", "accent-4", "waves-effect");
+
+    const divEl = document.createElement("div");
+    divEl.classList.add("center-align", "card-content", "white-text");
+
+    const spanEl = document.createElement("span");
+    spanEl.classList.add("card-title");
+    spanEl.innerHTML = `${result.trackName}`
+
+    const divContentEl = document.createElement("div");
+    divContentEl.classList.add("card-content");
+
+    const aritstNameEl = document.createElement("p");
+    aritstNameEl.innerHTML = `Artist: ${result.artistName}`;
+    aritstNameEl.classList.add("artist");
+
+    const albumNameEl = document.createElement("p");
+    albumNameEl.innerHTML = `From the album ${result.collectionName}`;
+    albumNameEl.classList.add("album");
+
+    var audioElement = document.createElement('audio');
+    audioElement.classList.add("audio");
+    var sourceElement = document.createElement('source');
+    sourceElement.classList.add("source");
+    sourceElement.src = result.previewUrl;
+    sourceElement.type = 'audio/mpeg';
+    audioElement.appendChild(sourceElement);
+
+    var buttonElement = document.createElement('button');
+    buttonElement.classList.add("fav-button");
+    buttonElement.addEventListener('click', function(event) {
+      event.preventDefault();
+      var parent = buttonElement.parentElement;
+      //console.log(parent);
+
+      
+
+    });
+
+    var aElement = document.createElement('a');
+    aElement.className = 'btn-floating fab waves-effect waves-light purple lighten-1 fav-btn';
+
+    var iElement = document.createElement('i');
+    iElement.className = 'material-icons';
+    iElement.textContent = 'add';
+
+    aElement.appendChild(iElement);
+    
+
+    divContentEl.appendChild(aritstNameEl);
+    divContentEl.appendChild(albumNameEl);
+    divContentEl.appendChild(audioElement);
+
+    buttonElement.appendChild(aElement);
+    divContentEl.appendChild(buttonElement);
+    
+    divEl.appendChild(spanEl);
+    divEl.appendChild(divContentEl);
+    cardEl.appendChild(divEl);
+    resultEl.appendChild(cardEl);
+
     resultsContainer.appendChild(resultEl);
+
   });
 };
 
