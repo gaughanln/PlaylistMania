@@ -36,7 +36,7 @@ Below are screenshots of various stages of the application + the mysql CLI showi
 
 <!-- link -->
 ## 💻 Deployment
-Here is the [link]() to the deployed Playlist Mania app
+Here is the [link](https://playlist-mania-gp2.herokuapp.com) to the deployed Playlist Mania app
 
 
 ## 📓 Contributing + Rough breakdown of tasks
