@@ -72,3 +72,24 @@ for (var i = 0; i < localStorage.length; i++) {
     favDiv.appendChild(divEl);
 }
 
+const deleteBtn = document.querySelectorAll(".trash");
+
+deleteBtn.forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+        event.preventDefault();
+        const parent = btn.parentElement.parentElement.parentElement.parentElement;
+        const grandParent = parent.parentElement;
+        grandParent.removeChild(parent);
+        localStorage.removeItem(parent.querySelector(".card-title").textContent);
+    });
+});
+
+document
+  .querySelector(".trash")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    localStorage.removeItem(title.textContent, htmlData);
+    console.log(localStorage);
+  });
+
+
