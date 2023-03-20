@@ -71,3 +71,4 @@ for (var i = 0; i < localStorage.length; i++) {
 
     favDiv.appendChild(divEl);
 }
+
