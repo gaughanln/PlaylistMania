@@ -102,3 +102,11 @@ display: inline-block;
   flex-wrap: wrap;
   width: 100%;
 }
+
+
+/* for the favorites part */
+
+#favorites {
+  display: flex;
+  flex-wrap: wrap;
+}

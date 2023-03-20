@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 
 router.get('/signup', (req, res) => {
   res.render('signup');
-});
+});d
 
 router.get('/login', (req, res) => {
   res.render('login');
@@ -23,10 +23,10 @@ router.get('/artist', withAuth, (req, res) => {
   });
 });
 
-router.get('/playlist', withAuth, (req, res) => {
+router.get('/playlist', (req, res) => {
   res.render('playlist', {
     logged_in: req.session.logged_in,
-  });
+});
 });
 
 module.exports = router;
