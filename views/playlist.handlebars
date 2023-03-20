@@ -1,11 +1,13 @@
-{{#if loggedIn}}
+{{!-- partials for header --}}
+{{#if logged_in}}
  {{> logout-header}}
+
     <!-- playlist page -->
     <div class="col s12 white-text genres center-align">
       <h1> these are a few of my favorite things </h1>
       </div>
   </div>
-    
+  {{!-- hard coded spotify playlist --}}
     <div class="center-align playlist">
       <div class="row">
         <div class="col s12 l6 offset-l1 offset-s1">
@@ -21,14 +23,17 @@
           ></iframe>
         </div>
 
+{{!-- playlist image --}}
         <div class="col s12 l3 dj-img responsive-img">
           <img src="images/playlist.png" alt="dj graphic" />
         </div>
       </div>
     </div>
 
-    {{!-- {{else}}
+<script src="js/index.js"></script>
+<script src="js/logout.js"></script>
+<script src="js/playlist.js"></script>
 
-    <a href="/login">You must login to start jammin! </a>
+    {{/if}}
 
-{{/if}} --}}
+    

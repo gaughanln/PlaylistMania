@@ -1,7 +1,8 @@
+{{!-- partials for header --}}
 {{#if logged_in}}
 {{> full-header}}
-<!-- pick your artist page -->
 
+<!-- pick your artist page -->
 <div class="center-align">
   <div class="col s12 white-text genres">
     <h1> party on wayne 🤘🏽 </h1>
@@ -27,10 +28,11 @@
     </div>
   </div>
 </div>
+
 <!-- search results template literal -->
-
-
 <div id="results" class="row"></div>
+
+{{!-- linking scripts --}}
 <script src="js/index.js"></script>
 <script src="js/logout.js"></script>
 {{/if}}
