@@ -41,13 +41,13 @@ Here is the [link]() to the deployed Playlist Mania app
 
 ## 📓 Contributing + Rough breakdown of tasks
 
-🥲 `Clint Martin` - login/logout.js, handlebars routing, code cleanup
+🥲 `Clint Martin` - login/logout.js + routes, handlebars routing, code cleanup
 
-😡 `Jason Shi` - models, user routes, local storage?
+😡 `Jason Shi` - models, routes, api/local storage
 
-🤭 `Joseph Cornelius` - routes
+🤭 `Joseph Cornelius` - routes, api/local storage
 
-🫠 `Lindsey Gaughan` - Handlebars, CSS, set up file structure, connections, server, and readme
+🫠 `Lindsey Gaughan` - Handlebars, CSS, set up file structure + connection, api
 
 
 
