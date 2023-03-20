@@ -38,21 +38,37 @@
 
 
 // template literal for card on playlist page that shows a delete button instead of a + button
-`<div class="card purple accent-4 waves-effect">
-<div class="center-align card-content white-text">
-  <span class="card-title">${result.trackName}</span>
+// `<div class="card purple accent-4 waves-effect">
+// <div class="center-align card-content white-text">
+//   <span class="card-title">${result.trackName}</span>
 
-  <div class="card-content">
-    <p>Artist: ${result.artistName}</p>
-    <p>From the album ${result.collectionName}</p>
+//   <div class="card-content">
+//     <p>Artist: ${result.artistName}</p>
+//     <p>From the album ${result.collectionName}</p>
 
-    <audio controls>
-      <source src="${result.previewUrl}" type="audio/mpeg" />
-    </audio>
-  </div>
-  <a
-    class="btn-floating fab waves-effect waves-light purple lighten-1 favorite"
-    ><i class="material-icons">delete</i></a
-  >
-</div>
-</div>`
+//     <audio controls>
+//       <source src="${result.previewUrl}" type="audio/mpeg" />
+//     </audio>
+//   </div>
+//   <a
+//     class="btn-floating fab waves-effect waves-light purple lighten-1 favorite"
+//     ><i class="material-icons">delete</i></a
+//   >
+// </div>
+// </div>`
+
+const favDiv = document.querySelector("#favorites");
+
+for (var i = 0; i < localStorage.length; i++) {
+    // Get the key of the current item
+    var key = localStorage.key(i);
+  
+    // Get the value of the current item
+    var value = localStorage.getItem(key);
+
+    var divEl = document.createElement("div");
+    divEl.innerHTML = value;
+
+    favDiv.appendChild(divEl);
+}
+
