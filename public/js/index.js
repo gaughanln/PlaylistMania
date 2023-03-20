@@ -3,7 +3,6 @@ let term = ""; //[genre]
 const media = "music";
 const entity = "song";
 
-// https://itunes.apple.com/search?term=[genre]&entity=song
 
 const fetchData = async (artist) => {
   const searchUrl = `${apiUrl}term=${artist}&media=${media}&entity=${entity}&attribute=genreIndex`;
@@ -26,24 +25,19 @@ const displayData = (data) => {
 
   slicedResults.forEach((result) => {
     const resultEl = document.createElement("div");
-    // do we want image? Need to update with materialize
-    // route the results to the next page (playlist)
-    resultEl.innerHTML = `
-     
-   
-        <div class="card purple accent-4 waves-effect">
-          <div class="center-align card-content white-text">
-            <span class="card-title">${result.trackName}</span>
 
-        <div class="card-content">
-        <p>Artist: ${result.artistName}</p>
-        <p>From the album ${result.collectionName}</p>
-       
-        <audio controls>
-          <source src="${result.previewUrl}" type="audio/mpeg">
-        </audio>
-        </div>
-        <a class="btn-floating fab waves-effect waves-light purple lighten-1 favorite"><i class="material-icons">add</i></a>
+    resultEl.innerHTML = `
+    <div class="card purple accent-4 waves-effect">
+      <div class="center-align card-content white-text">
+        <span class="card-title">${result.trackName}</span>
+          <div class="card-content">
+            <p>Artist: ${result.artistName}</p>
+            <p>From the album ${result.collectionName}</p>
+              <audio controls>
+                <source src="${result.previewUrl}" type="audio/mpeg">
+              </audio>
+          </div>
+            <a class="btn-floating fab waves-effect waves-light purple lighten-1 favorite"><i class="material-icons">add</i></a>
       </div>
     </div>
     `;
@@ -61,7 +55,5 @@ document
     displayData(data);
   });
 
+// need to add favorites button to route the results to the next page (playlist)
 
-
-
-  
