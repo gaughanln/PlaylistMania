@@ -29,10 +29,6 @@ body {
   background-color: none !important;
 }
 
-/* .trash {
-  margin-top: 20px;
-} */
-
 .btn-large:hover {
 background-color: var(--light) !important;
 }
@@ -112,9 +108,6 @@ display: inline-block;
   flex-wrap: wrap;
   width: 100%;
 }
-
-
-/* for the favorites part */
 
 #favorites {
   display: flex;
