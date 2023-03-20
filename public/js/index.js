@@ -46,13 +46,12 @@ const displayData = (data) => {
     albumNameEl.innerHTML = `From the album ${result.collectionName}`;
     albumNameEl.classList.add("album");
 
-    var audioElement = document.createElement('audio');
-    audioElement.classList.add("audio");
-    var sourceElement = document.createElement('source');
-    sourceElement.classList.add("source");
-    sourceElement.src = result.previewUrl;
-    sourceElement.type = 'audio/mpeg';
-    audioElement.appendChild(sourceElement);
+    var audioDivElement = document.createElement('div');
+    audioDivElement.classList.add("audioDiv");
+    audioDivElement.innerHTML = `
+      <audio controls class="audio">
+        <source class="source" src="${result.previewUrl}" type="audio/mpeg" />
+      </audio>`;
 
     var buttonElement = document.createElement('button');
     buttonElement.classList.add("fav-button");
@@ -60,9 +59,34 @@ const displayData = (data) => {
       event.preventDefault();
       var parent = buttonElement.parentElement;
       //console.log(parent);
+      var greatGrandParent = parent.parentElement.parentElement;
 
-      
+      //console.log(greatGrandParent);
 
+      const title = greatGrandParent.querySelector(".card-title");
+      //console.log(title.textContent);
+      const artist = greatGrandParent.querySelector(".artist");
+      const album = greatGrandParent.querySelector(".album");
+      const url = greatGrandParent.querySelector(".source").getAttribute("src");
+      const htmlData = 
+      `
+      <div class="card purple accent-4 waves-effect">
+      <div class="center-align card-content white-text">
+        <span class="card-title">${title.textContent}</span>
+        <div class="card-content">
+          <p class="artist">${artist.textContent}</p>
+          <p class="album">${album.textContent}</p>
+          <div class="audioDiv">
+            <audio controls class="audio">
+              <source class="source" src=${url} type="audio/mpeg">
+            </audio>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+      localStorage.setItem(title.textContent, htmlData);
+      buttonElement.remove();
     });
 
     var aElement = document.createElement('a');
@@ -77,7 +101,7 @@ const displayData = (data) => {
 
     divContentEl.appendChild(aritstNameEl);
     divContentEl.appendChild(albumNameEl);
-    divContentEl.appendChild(audioElement);
+    divContentEl.appendChild(audioDivElement);
 
     buttonElement.appendChild(aElement);
     divContentEl.appendChild(buttonElement);

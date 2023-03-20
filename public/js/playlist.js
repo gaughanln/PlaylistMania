@@ -56,3 +56,18 @@
 //   >
 // </div>
 // </div>`
+
+const favDiv = document.querySelector("#favorites");
+
+for (var i = 0; i < localStorage.length; i++) {
+    // Get the key of the current item
+    var key = localStorage.key(i);
+  
+    // Get the value of the current item
+    var value = localStorage.getItem(key);
+
+    var divEl = document.createElement("div");
+    divEl.innerHTML = value;
+
+    favDiv.appendChild(divEl);
+}
