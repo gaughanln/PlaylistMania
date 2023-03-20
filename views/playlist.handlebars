@@ -2,34 +2,21 @@
 {{#if logged_in}}
  {{> logout-header}}
 
+<div class="container valign-wrapper">
+
     <!-- playlist page -->
-    <div class="col s12 white-text genres center-align">
+    <div class="col s12 white-text artist center-align">
       <h1> these are a few of my favorite things </h1>
       </div>
-  </div>
-  {{!-- hard coded spotify playlist --}}
-    <div class="center-align playlist">
-      <div class="row">
-        <div class="col s12 l6 offset-l1 offset-s1">
-          <iframe
-            style="border-radius: 12px"
-            src="https://open.spotify.com/embed/playlist/37i9dQZF1DX1kCIzMYtzum?utm_source=generator&theme=0"
-            width="60%"
-            height="500"
-            frameborder="0"
-            allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          ></iframe>
-        </div>
+ 
+
 
 {{!-- playlist image --}}
         <div class="col s12 l3 dj-img responsive-img">
           <img src="images/playlist.png" alt="dj graphic" />
         </div>
       </div>
-    </div>
-
+   
     
     <div id="favorites" class="row"></div>
 <!-- search results template literal -->
