@@ -2,7 +2,7 @@
 
 ## Description
 
-Tired of listening to the same chart toppers that play on repeat? Looking for new music? Welcome to Playlist Mania. Here you will be able to pick you're genre of music and we will generate a playlist of songs based on that genre. You'll need to login and create an account so that your past searches can be saved for later reference. 
+Tired of listening to the same chart toppers that play on repeat? Looking for new music? Welcome to Playlist Mania. Here you will be able to search for an artist and explore new songs to add to a playlist. You'll need to login and create an account - Music isn't free! 😉 so that your past searches can be saved for later reference. 
 
 ## User Story
 
