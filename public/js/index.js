@@ -54,7 +54,7 @@ const displayData = (data) => {
       </audio>`;
 
     var buttonElement = document.createElement('button');
-    buttonElement.classList.add("fav-button");
+    buttonElement.classList.add("fav-btn");
     buttonElement.addEventListener('click', function(event) {
       event.preventDefault();
       var parent = buttonElement.parentElement;
@@ -68,6 +68,8 @@ const displayData = (data) => {
       const artist = greatGrandParent.querySelector(".artist");
       const album = greatGrandParent.querySelector(".album");
       const url = greatGrandParent.querySelector(".source").getAttribute("src");
+
+      // template literal for playlist cards
       const htmlData = 
       `
       <div class="card purple accent-4 waves-effect">
@@ -81,6 +83,10 @@ const displayData = (data) => {
               <source class="source" src=${url} type="audio/mpeg">
             </audio>
           </div>
+          <br>
+          <a class="btn-floating fab waves-effect waves-light purple lighten-1 favorite">
+            <i class="material-icons trash">delete</i>
+          </a>
         </div>
       </div>
     </div>`;
