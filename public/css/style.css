@@ -24,12 +24,18 @@ body {
   margin: 1%;
 }
 
+.btn-floating {
+  margin-top: 20px;
+  background-color: none !important;
+}
+
 .btn-large:hover {
 background-color: var(--light) !important;
 }
 
-.favorite:hover {
-  background-color: var(--light) !important;
+.fav-btn {
+  background-color: var(--nav) !important;
+  border: none;
 }
 
 nav {
@@ -52,11 +58,11 @@ margin-top: .5rem;
   font-size: 4rem;
   margin-top: 8rem;
 }
-.genres h1 {
+.artist h1 {
   font-family: impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
 }
-.genre-contents {
+.artist-contents {
   margin-top: 10%;
 }
 
@@ -92,11 +98,18 @@ display: inline-block;
   padding: 10px;
   margin: 10px;
   max-width: 400px;
-  max-height: 300px;
+  max-height: 600px;
   min-height: 300px;
 }
 
 #results {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#favorites {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
