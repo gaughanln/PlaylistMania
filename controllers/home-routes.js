@@ -1,10 +1,7 @@
-const exphbs = require('express-handlebars');
-const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
 const express = require('express');
 const router = express.Router();
-
 
 router.use(express.static('public'));
 
@@ -26,9 +23,10 @@ router.get('/artist', withAuth, (req, res) => {
   });
 });
 
-router.get('/playlist', (req, res) => {
-  res.render('playlist');
-  logged_in: req.session.logged_in,
+router.get('/playlist', withAuth, (req, res) => {
+  res.render('playlist', {
+    logged_in: req.session.logged_in,
+  });
 });
 
 module.exports = router;

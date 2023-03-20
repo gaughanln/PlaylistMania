@@ -1,14 +1,9 @@
 :root {
   --background: black;
-  /* purple accent-4 */
   --nav: #aa00ff;
-  /* deep-purple accent-1 */
   --light: #b388ff;
-  /* deep-purple lighten-1 */
   --medium: #7e57c2;
-  /* deep-purple */
   --dark: #673ab7;
-  /* deep-purple darken-4 */
   --darkest: #311b92; 
   --font: white;
 }
@@ -39,7 +34,6 @@ background-color: var(--light) !important;
 
 nav {
   height: 80px;
-/* line-height: 0px; */
 }
 
 .brand-logo {
@@ -67,7 +61,6 @@ margin-top: .5rem;
 }
 
 .playlist-img {
-  /* max-height: 3rem; */
 display: inline-block;
 }
 

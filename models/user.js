@@ -1,11 +1,8 @@
-// import important parts of sequelize library
 const { Model, DataTypes } = require('sequelize');
-// import our database connection from config.js
 const sequelize = require('../config/connections');
 const bcrypt = require('bcrypt');
 
 class User extends Model {
-    // allows us to check the password
     checkPassword(loginPw) {
         return bcrypt.compareSync(loginPw, this.password);
     }
@@ -24,7 +21,7 @@ User.init(
             allowNull: false,
             unique: true,
             validate: {
-              isEmail: true,
+                isEmail: true,
             },
         },
         password: {
@@ -34,29 +31,24 @@ User.init(
                 len: [5],
             },
         },
-
-    },
-    {
-        //hooks
-        hooks: {
-            // for create http request
-             beforeCreate: async (newUserData) => {
-                newUserData.password = await bcrypt.hash(newUserData.password, 10);
-                return newUserData;
-            },
-            // for put http request
-            beforeUpdate: async (updatedUserData) => {
-                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
-                return updatedUserData;
-            },
+    }, {
+    hooks: {
+        beforeCreate: async (newUserData) => {
+            newUserData.password = await bcrypt.hash(newUserData.password, 10);
+            return newUserData;
         },
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'user',
-    }
-    
+        beforeUpdate: async (updatedUserData) => {
+            updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+            return updatedUserData;
+        },
+    },
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'user',
+}
+
 );
 
 module.exports = User;
